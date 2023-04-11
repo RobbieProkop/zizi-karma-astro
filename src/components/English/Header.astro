@@ -1,0 +1,27 @@
+---
+import "../../styles/header.scss";
+import russia from "../../../public/russia.png";
+---
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <h1>Zizi Karma</h1>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-items">
+        <li class="item"><a href="#about"></a>About</li>
+        <li class="item"><a href="#faq"></a>FAQ</li>
+        <li class="item"><a href="#testimonials"></a>Testimonials</li>
+        <li class="item"><a href="#contact"></a>Contact Us</li>
+        <li class="item lang">
+          <a href="/ru">
+            <img src={russia} alt="russian flag" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

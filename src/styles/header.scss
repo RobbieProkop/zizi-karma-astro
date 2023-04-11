@@ -1,0 +1,61 @@
+@import "./variables";
+
+.header {
+  background-color: $primary-color;
+  height: 80px;
+  color: $white;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    .logo {
+      a {
+        color: $white;
+      }
+    }
+
+    .nav-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .item {
+        position: relative;
+        margin: 0 5px;
+        transition: opacity 0.2s ease-out;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.7;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+
+            opacity: 0.7;
+            background-color: $white; // Set the color of the underline
+
+            // transform: translateX(-50%);
+            transition: width 0.2s ease-out; // Set the transition property for the underline transform
+          }
+          &:hover::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+
+        &.lang {
+          a {
+            height: 100%;
+          }
+          img {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+}

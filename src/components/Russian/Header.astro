@@ -1,0 +1,27 @@
+---
+import "../../styles/header.scss";
+import canada from "../../../public/canada.png";
+---
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/ru">
+        <h1>Zizi Karma</h1>
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-items">
+        <li class="item"><a href="#about"></a>Обо мне</li>
+        <li class="item"><a href="#faq"></a>FAQ</li>
+        <li class="item"><a href="#testimonials"></a>Услуги и цены</li>
+        <li class="item"><a href="#contact"></a>Контакты</li>
+        <li class="item lang">
+          <a href="/">
+            <img src={canada} alt="canadian flag" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

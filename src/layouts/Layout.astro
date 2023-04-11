@@ -1,0 +1,54 @@
+---
+import "../styles/global.scss";
+export interface Props {
+  title?: string;
+}
+
+const { title = "Zizi Karma" } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Zizi Karma, founded by Yulia Prokop, is a trusted clinical psychology practice offering personalized therapy services to help individuals overcome life's challenges. Get the support you need to achieve mental wellness and live a fulfilling life. Contact us today."
+    />
+    <meta property="og:title" content="Zizi Karma" />
+    <meta
+      property="og:description"
+      content="Zizi Karma, founded by Yulia Prokop, is a trusted clinical psychology practice offering personalized therapy services to help individuals overcome life's challenges. Get the support you need to achieve mental wellness and live a fulfilling life. Contact us today. "
+    />
+    <meta
+      property="og:image"
+      content="https://nepallife.org/images/mountain-1.jpg"
+    />
+    <meta property="og:url" content="https://nepallife.org" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Zizi Karma, Psychology, self help, therapy, "
+    />
+    <meta name="author" content="Robbie Prokop" />
+    <meta
+      name="google-site-verification"
+      content="T1DPOFo7gv6vX0tBv3P16foDh2wync4wwa9sSPvnv7E"
+    />
+    <meta name="msvalidate.01" content="40FDF646A6A589717E0209625D0C26D4" />
+    <meta name="theme-color" content="#057389" />
+    <link rel="shortcut icon" type="image/x-icon" href="./icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Quicksand:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="icons/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

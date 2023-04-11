@@ -1,0 +1,54 @@
+---
+import "../styles/global.scss";
+export interface Props {
+  title?: string;
+}
+
+const { title = "Зизи Карма" } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Зизи Карма, основанная Юлией Прокоп, является надежной клинической психологической практикой, предлагающей персонализированные терапевтические услуги, чтобы помочь людям преодолеть жизненные трудности. Получите поддержку, необходимую для достижения психического благополучия и полноценной жизни. Свяжитесь с нами сегодня."
+    />
+    <meta property="og:title" content="Зизи Карма" />
+    <meta
+      property="og:description"
+      content="Зизи Карма, основанная Юлией Прокоп, является надежной клинической психологической практикой, предлагающей персонализированные терапевтические услуги, чтобы помочь людям преодолеть жизненные трудности. Получите поддержку, необходимую для достижения психического благополучия и полноценной жизни. Свяжитесь с нами сегодня."
+    />
+    <meta
+      property="og:image"
+      content="https://nepallife.org/images/mountain-1.jpg"
+    />
+    <meta property="og:url" content="https://nepallife.org" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Зизи Карма, Psychology, self help, therapy, "
+    />
+    <meta name="author" content="Robbie Prokop" />
+    <meta
+      name="google-site-verification"
+      content="T1DPOFo7gv6vX0tBv3P16foDh2wync4wwa9sSPvnv7E"
+    />
+    <meta name="msvalidate.01" content="40FDF646A6A589717E0209625D0C26D4" />
+    <meta name="theme-color" content="#057389" />
+    <link rel="shortcut icon" type="image/x-icon" href="./icons/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Quicksand:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="icons/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

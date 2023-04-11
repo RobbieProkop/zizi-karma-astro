@@ -1,0 +1,23 @@
+{
+  "name": "zizi-2023",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^2.1.1",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "astro": "^2.1.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.58.1"
+  }
+}
