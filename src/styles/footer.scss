@@ -1,24 +1,24 @@
 @import "./variables";
 
-a {
-  color: $white;
-  &:hover {
-    opacity: 0.7;
-  }
-}
-p {
-  margin: 0;
-}
 .footer {
   display: flex;
   justify-content: space-between;
   height: 120px;
-  background-color: $black;
-  color: $white;
+  background-color: $third-color;
+  color: $black;
   width: 100%;
   padding: 0 2rem;
   margin-top: auto;
   text-align: left;
+  a {
+    color: $black;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  p {
+    margin: 0;
+  }
 
   .left {
     display: flex;
@@ -44,6 +44,10 @@ p {
     img {
       width: 32px;
       margin: 0 5px;
+      &:hover {
+        cursor: pointer;
+      }
+
       &:nth-child(1) {
         margin-left: 0;
       }
