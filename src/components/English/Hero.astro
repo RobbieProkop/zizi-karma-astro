@@ -4,9 +4,10 @@ import headshot from "../../../public/yuli-headshot.jpeg";
 ---
 
 <section class="hero">
-  <div class="photo">
-    <img src={headshot} alt="Yuli Prokop Headshot" />
-  </div>
+  <picture>
+    <source type="image/webp" />
+    <img src={headshot} alt="Yuli Prokop Headshot" loading="lazy" />
+  </picture>
 
   <div class="hero-text">
     <h2>Psychological Therapist with over 13 years of experience</h2>

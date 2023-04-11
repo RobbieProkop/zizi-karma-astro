@@ -1,0 +1,28 @@
+.points {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1250px;
+  margin: auto;
+  .list-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+
+    img {
+      align-items: flex-start;
+      max-width: 90px;
+    }
+
+    h3 {
+      margin-left: 1rem;
+      font-size: 22px;
+    }
+    ul {
+      margin-left: 2rem;
+      list-style: disc;
+      font-weight: 300;
+    }
+  }
+}
