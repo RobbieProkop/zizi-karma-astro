@@ -1,0 +1,17 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+
+  .photo {
+    img {
+      max-width: 560px;
+      padding: 2rem;
+    }
+  }
+  .hero-text {
+    padding: 2rem;
+    max-width: 560px;
+  }
+}
