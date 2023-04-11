@@ -4,11 +4,18 @@
   justify-content: center;
   max-width: 1250px;
   margin: auto;
+  padding: 2rem;
+  margin-bottom: 9rem;
+
   .list-group {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     width: 50%;
+
+    &:nth-child(2) {
+      margin-left: 1rem;
+    }
 
     img {
       align-items: flex-start;

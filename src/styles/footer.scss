@@ -1,8 +1,6 @@
 @import "./variables";
 
 .footer {
-  display: flex;
-  justify-content: space-between;
   height: 120px;
   background-color: $third-color;
   color: $black;
@@ -10,6 +8,13 @@
   padding: 0 2rem;
   margin-top: auto;
   text-align: left;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
   a {
     color: $black;
     &:hover {
