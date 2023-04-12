@@ -1,0 +1,60 @@
+@import "./variables";
+.aspects {
+  margin: 2rem 0;
+  background-color: $third-color;
+
+  h2 {
+    padding-top: 9rem;
+    font-size: 3rem;
+  }
+
+  .aspect-list {
+    background-color: #fff;
+    margin: 2rem 0;
+    // padding: 2rem;
+    li {
+      padding: 2rem 1rem;
+      border-bottom: $third-color 2px solid;
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+          font-size: 1.5rem;
+        }
+        .plus {
+          height: 50px;
+          padding: 0.8rem;
+          background-color: $white;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 4rem;
+          color: $secondary-color;
+          transition: all ease-in-out 0.2s;
+          &:hover {
+            color: $white;
+            background-color: $secondary-color;
+          }
+        }
+        span {
+          font-weight: 100;
+          width: 100%;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      // .answer {
+      //   display: none;
+
+      //   &.active {
+      //     display: inline-block;
+      //   }
+      // }
+    }
+  }
+}
