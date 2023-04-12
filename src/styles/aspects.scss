@@ -39,7 +39,7 @@
           justify-content: center;
           align-items: center;
           font-size: 3rem;
-          color: $secondary-color;
+          color: $light-second;
 
           transition: all ease-in-out 0.2s;
           span {
@@ -80,7 +80,7 @@
         transition: all ease-in-out 0.2s;
         .plus {
           color: $white;
-          background-color: $secondary-color;
+          background-color: $light-second;
         }
       }
     }
