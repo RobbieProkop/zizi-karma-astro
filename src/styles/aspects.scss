@@ -4,20 +4,24 @@
   background-color: $third-color;
 
   h2 {
-    padding-top: 9rem;
-    font-size: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    font-size: 2.6rem;
     text-align: center;
   }
 
   .aspect-list {
     max-width: 800px;
-    background-color: #fff;
     margin: 2rem auto;
-
-    // padding: 2rem;
+    padding-bottom: 6rem;
     li {
+      background-color: #fff;
+      margin-bottom: 0.5rem;
       padding: 2rem 1rem;
-      border-bottom: $third-color 2px solid;
+
+      p {
+        margin: 0;
+      }
       div {
         display: flex;
         justify-content: space-between;
@@ -28,37 +32,57 @@
         }
         .plus {
           height: 50px;
-          padding: 0.8rem;
+          padding: 1.4rem 0.6rem;
           background-color: $white;
           border-radius: 50%;
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 4rem;
+          font-size: 3rem;
           color: $secondary-color;
+
           transition: all ease-in-out 0.2s;
-          &:hover {
-            color: $white;
-            background-color: $secondary-color;
+          span {
+            font-weight: 100;
+            width: 100%;
           }
         }
-        span {
-          font-weight: 100;
-          width: 100%;
-        }
+      }
+
+      .rotate-back {
+        transition: rotate ease-in-out 0.2s;
+        rotate: (0deg);
+      }
+      .rotate-plus {
+        transition: rotate ease-in-out 0.2s;
+        rotate: (45deg);
+      }
+
+      .transition-enter {
+        opacity: 0;
+      }
+      .transition-enter-active {
+        opacity: 1;
+        transition: opacity 2000ms;
+        margin: 0;
+      }
+
+      .transition-exit {
+        opacity: 1;
+      }
+      .transition-exit-active {
+        opacity: 0;
+        transition: opacity 2000ms;
       }
 
       &:hover {
         cursor: pointer;
+        transition: all ease-in-out 0.2s;
+        .plus {
+          color: $white;
+          background-color: $secondary-color;
+        }
       }
-
-      // .answer {
-      //   display: none;
-
-      //   &.active {
-      //     display: inline-block;
-      //   }
-      // }
     }
   }
 }
