@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const reviews = await Astro.glob("../components/Russian/reviews/*.md");
+
+  return reviews.map((review) => ({
+    params: {
+      slug: review.frontmatter.slug,
+    },
+    props: {
+      review,
+    },
+  }));
+}
+
+const { Content, frontmatter } = Astro.props.review;
+---
+
+<Layout>
+  <section>
+    <div class="container">
+      <h1>{frontmatter.name}</h1>
+      <Content />
+    </div>
+  </section>
+</Layout>

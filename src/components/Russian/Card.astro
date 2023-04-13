@@ -1,0 +1,18 @@
+---
+export async function getStaticPaths() {
+  const reviews = await Astro.glob("./reviews/*.md");
+
+  return reviews.map((review) => ({
+    props: {
+      review,
+    },
+  }));
+}
+
+const { frontmatter } = Astro.props.review;
+---
+
+<article class="card">
+  <!-- <Content /> -->
+  <h3>{frontmatter.name}, {frontmatter.age}</h3>
+</article>
