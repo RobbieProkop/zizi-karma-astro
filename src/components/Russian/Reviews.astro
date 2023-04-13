@@ -1,34 +1,22 @@
 ---
 import "../../styles/reviews.scss";
-
 const reviews = await Astro.glob("./reviews/*.md");
-reviews.map((review) => ({
-  props: {
-    review,
-  },
-}));
-
-export async function getStaticPaths() {
-  const reviews = await Astro.glob("./reviews/*.md");
-
-  return reviews.map((review) => ({
-    props: {
-      review,
-    },
-  }));
-}
 ---
 
 <section class="reviews" id="reviews">
   <div class="container">
     <h2>Отзывы</h2>
-    <!-- {console.log(reviews)} -->
     {
       reviews.map((review) => {
+        const { Content } = review;
+
         return (
-          <h3>
-            <slot />
-          </h3>
+          <article class="review">
+            <Content />
+            <h3>
+              {review.frontmatter.name}, {review.frontmatter.age}
+            </h3>
+          </article>
         );
       })
     }
