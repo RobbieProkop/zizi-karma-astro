@@ -1,24 +1,54 @@
 ---
 import "../../styles/reviews.scss";
+
+import ReviewCard from "./ReviewCard";
 const reviews = await Astro.glob("./reviews/*.md");
 ---
 
 <section class="reviews" id="reviews">
   <div class="container">
     <h2>Отзывы</h2>
-    {
-      reviews.map((review) => {
-        const { Content } = review;
+    <div class="reviews-flex">
+      {
+        reviews.map((review) => {
+          const { Content, frontmatter } = review;
 
-        return (
-          <article class="review">
-            <Content />
-            <h3>
-              {review.frontmatter.name}, {review.frontmatter.age}
-            </h3>
-          </article>
-        );
-      })
-    }
+          return (
+            <article class="review-container">
+              <div class="inner">
+                <div class="review-item">
+                  <Content />
+                  <h3>
+                    {review.frontmatter.name}, {review.frontmatter.age}
+                  </h3>
+                </div>
+              </div>
+            </article>
+          );
+        })
+      }
+      <!-- <div class="carousel-buttons">
+        <button class="btn-arrow">
+          <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+        <div class="indicators">
+          {
+            reviews.map((review) => {
+              return (
+                <button class="indicator-btn">
+                  <span class="material-symbols-outlined">
+                    {" "}
+                    radio_button_unchecked
+                  </span>
+                </button>
+              );
+            })
+          }
+        </div>
+        <button class="btn-arrow">
+          <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+      </div> -->
+    </div>
   </div>
 </section>
