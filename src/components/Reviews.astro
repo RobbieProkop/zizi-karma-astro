@@ -1,13 +1,18 @@
 ---
-import "../../styles/reviews.scss";
+import "../styles/reviews.scss";
+// const reviews = await Astro.glob("./reviews/*.md");
 
-import ReviewCard from "./ReviewCard";
-const reviews = await Astro.glob("./reviews/*.md");
+// console.log("review tyep", typeof reviews);
+export interface Props {
+  title: string;
+  reviews: object;
+}
+const { reviews, title } = Astro.props as Props;
 ---
 
 <section class="reviews" id="reviews">
   <div class="container">
-    <h2>Отзывы</h2>
+    <h2>{title}</h2>
     <div class="scroll-container">
       {
         reviews.map((review) => {
@@ -19,7 +24,7 @@ const reviews = await Astro.glob("./reviews/*.md");
                 <div class="review-item">
                   <Content />
                   <h3>
-                    {review.frontmatter.name}, {review.frontmatter.age}
+                    {frontmatter.name}, {frontmatter.age}
                   </h3>
                 </div>
               </div>

@@ -6,7 +6,8 @@ import Hero from "../components/English/Hero.astro";
 import Points from "../components/English/Points.astro";
 import Aspects from "../components/English/Aspects.jsx";
 import Services from "../components/English/Prices.astro";
-import Reviews from "../components/English/Reviews.astro";
+import Reviews from "../components/Reviews.astro";
+const reviews = await Astro.glob("../components/English/reviews/*.md");
 ---
 
 <Layout title="Zizi Karma Psychology">
@@ -21,7 +22,7 @@ import Reviews from "../components/English/Reviews.astro";
   <!-- Price -->
   <Services />
   <!-- Reviews -->
-  <Reviews client:load />
+  <Reviews title={"Reviews"} reviews={reviews} />
   <!-- Contact -->
   <!-- Footer -->
   <Footer />
