@@ -4,20 +4,21 @@
   background-color: $third-color;
 
   h2 {
-    padding-top: 6rem;
+    padding-top: 9rem;
     padding-bottom: 4rem;
     font-size: 2.6rem;
     text-align: center;
   }
 
   .aspect-list {
-    max-width: 800px;
+    max-width: 760px;
     margin: 2rem auto;
-    padding-bottom: 6rem;
+    padding-bottom: 7.5rem;
     li {
       background-color: #fff;
-      margin-bottom: 0.5rem;
-      padding: 2rem 1rem;
+      // margin-bottom: 0.5rem;
+      border-bottom: 2px solid $third-color;
+      padding: 1.1rem 1rem 1.1rem 1.9rem;
 
       p {
         margin: 0;

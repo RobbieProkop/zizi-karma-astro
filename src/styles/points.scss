@@ -4,8 +4,9 @@
   justify-content: center;
   max-width: 1250px;
   margin: auto;
-  padding: 2rem;
+  padding: 2rem 0;
   margin-bottom: 5rem;
+  grid-gap: 40px;
 
   .list-group {
     display: flex;
@@ -13,28 +14,25 @@
     justify-content: center;
     width: 50%;
 
-    &:nth-child(2) {
-      margin-left: 1rem;
-    }
-
     img {
       align-items: flex-start;
       max-width: 90px;
     }
 
     h3 {
-      margin-left: 1rem;
+      margin-left: 1.2rem;
       font-size: 22px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
     ul {
-      margin-left: 2rem;
+      margin-left: 2.5rem;
       list-style: disc;
       font-weight: 300;
 
       li {
         max-width: 430px;
-        line-height: 1.5;
+        line-height: 1.6;
+        color: #000;
       }
     }
   }
