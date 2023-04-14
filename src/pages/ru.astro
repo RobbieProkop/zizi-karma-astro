@@ -7,6 +7,7 @@ import Points from "../components/Russian/Points.astro";
 import Aspects from "../components/Russian/Aspects.jsx";
 import Services from "../components/Russian/Prices.astro";
 import Reviews from "../components/Reviews.astro";
+import Contact from "../components/Contact.astro";
 
 const reviews = await Astro.glob("../components/Russian/reviews/*.md");
 ---
@@ -25,6 +26,12 @@ const reviews = await Astro.glob("../components/Russian/reviews/*.md");
   <!-- Reviews -->
   <Reviews title={"Отзывы"} reviews={reviews} />
   <!-- Contact -->
+  <Contact
+    title="Записаться на консультацию"
+    telephone="телефон"
+    name="Имя"
+    button="Оставить заявку"
+  />
   <!-- Footer -->
   <Footer />
 </Layout>

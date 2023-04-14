@@ -7,6 +7,7 @@ import Points from "../components/English/Points.astro";
 import Aspects from "../components/English/Aspects.jsx";
 import Services from "../components/English/Prices.astro";
 import Reviews from "../components/Reviews.astro";
+import Contact from "../components/Contact.astro";
 const reviews = await Astro.glob("../components/English/reviews/*.md");
 ---
 
@@ -24,6 +25,7 @@ const reviews = await Astro.glob("../components/English/reviews/*.md");
   <!-- Reviews -->
   <Reviews title={"Reviews"} reviews={reviews} />
   <!-- Contact -->
+  <Contact title="Sign Up" telephone="Telephone" name="Name" button="Submit" />
   <!-- Footer -->
   <Footer />
 </Layout>

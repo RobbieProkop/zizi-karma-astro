@@ -1,0 +1,38 @@
+---
+import "../styles/contact.scss";
+
+export interface Props {
+  title: string;
+  telephone: string;
+  name: string;
+  button: string;
+}
+
+const { title, telephone, name, button } = Astro.props as Props;
+
+import backgroundImg from "/form_background.jpeg";
+---
+
+<section id="contact" class="contact">
+  <img loading="lazy" src={backgroundImg} role="presentation" />
+  <div class="overlay"></div>
+  <div class="container">
+    <h2>{title}</h2>
+
+    <form class="form">
+      <div class="form-group">
+        <label for="email"></label>
+        <input type="email" placeholder="E-mail" />
+      </div>
+      <div class="form-group">
+        <label for="phone"></label>
+        <input type="text" placeholder={telephone} />
+      </div>
+      <div class="form-group">
+        <label for="name"></label>
+        <input type="text" placeholder={name} />
+      </div>
+      <button class="btn btn-primary btn-block">{button}</button>
+    </form>
+  </div>
+</section>
