@@ -22,4 +22,37 @@
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.4);
   }
+
+  .contact-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+
+    h2 {
+      color: $white;
+    }
+
+    .form {
+      width: 560px;
+
+      .form-group {
+        input {
+          width: 100%;
+          height: 3.5rem;
+          border-radius: 10px;
+          border: none;
+          margin-bottom: 20px;
+          padding: 1rem;
+          font-size: 1rem;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
 }
