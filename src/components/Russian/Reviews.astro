@@ -8,7 +8,7 @@ const reviews = await Astro.glob("./reviews/*.md");
 <section class="reviews" id="reviews">
   <div class="container">
     <h2>Отзывы</h2>
-    <div class="reviews-flex">
+    <div class="scroll-container">
       {
         reviews.map((review) => {
           const { Content, frontmatter } = review;
@@ -27,28 +27,63 @@ const reviews = await Astro.glob("./reviews/*.md");
           );
         })
       }
-      <!-- <div class="carousel-buttons">
-        <button class="btn-arrow">
-          <span class="material-symbols-outlined">arrow_back_ios</span>
-        </button>
-        <div class="indicators">
-          {
-            reviews.map((review) => {
-              return (
-                <button class="indicator-btn">
-                  <span class="material-symbols-outlined">
-                    {" "}
-                    radio_button_unchecked
-                  </span>
-                </button>
-              );
-            })
-          }
-        </div>
-        <button class="btn-arrow">
-          <span class="material-symbols-outlined">arrow_forward_ios</span>
-        </button>
-      </div> -->
+    </div>
+    <div class="scroll-btns">
+      <button class="btn-arrow prev">
+        <span class="material-symbols-outlined"> arrow_back_ios_new</span>
+      </button>
+      <button class="btn-arrow next">
+        <span class="material-symbols-outlined">arrow_forward_ios</span>
+      </button>
     </div>
   </div>
 </section>
+
+<script>
+  const container = document.querySelector(".scroll-container");
+  const reviews = document.querySelectorAll(".review-container");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  console.log("review length", reviews.length);
+
+  function scrollToNextReview() {
+    const currentReviewIndex = Math.round(
+      (container.scrollLeft / container.scrollWidth) * reviews.length
+    );
+    if (currentReviewIndex === reviews.length - 1) {
+      container.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+    if (currentReviewIndex < reviews.length - 1) {
+      container.scrollTo({
+        left:
+          (container.scrollWidth / reviews.length) * (currentReviewIndex + 1),
+        behavior: "smooth",
+      });
+    }
+  }
+
+  function scrollToPrevReview() {
+    const currentReviewIndex = Math.round(
+      (container.scrollLeft / container.scrollWidth) * reviews.length
+    );
+    if (currentReviewIndex === 0) {
+      container.scrollTo({
+        left: (container.scrollWidth / reviews.length) * (reviews.length - 1),
+        behavior: "smooth",
+      });
+    }
+    if (currentReviewIndex > 0) {
+      container.scrollTo({
+        left:
+          (container.scrollWidth / reviews.length) * (currentReviewIndex - 1),
+        behavior: "smooth",
+      });
+    }
+  }
+
+  nextBtn.addEventListener("click", scrollToNextReview);
+  prevBtn.addEventListener("click", scrollToPrevReview);
+</script>

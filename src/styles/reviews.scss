@@ -2,11 +2,13 @@
 
 .reviews {
   background-color: $third-color;
-
-  .reviews-flex {
+  .container {
+    position: relative;
+  }
+  .scroll-container {
     display: flex;
     // justify-content: center;
-    overflow-x: scroll;
+    overflow: hidden;
     margin: auto;
     align-items: center;
     max-width: 730px;
@@ -45,13 +47,38 @@
 
         .review-item {
           padding: 2rem;
-          background-color: $white;
+          // background-color: $white;
 
           border-radius: 5px;
         }
         h3 {
           font-size: 1rem;
         }
+      }
+    }
+  }
+
+  .scroll-btns {
+    position: absolute;
+    top: 50%;
+    width: 90%;
+    // height: 15rem;
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+
+    .btn-arrow {
+      background-color: $light-second;
+      border: 1px solid $light-second;
+      border-radius: 25px;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }
