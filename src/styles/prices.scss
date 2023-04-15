@@ -22,6 +22,9 @@
         padding-bottom: 10px;
         border-bottom: 2px solid $light-second-opacity;
         font-size: 1.25rem;
+        span {
+          min-width: 70px;
+        }
       }
 
       div {
@@ -29,6 +32,46 @@
         p {
           font-weight: 300;
           margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .prices {
+    .prices-container {
+      display: flex;
+      flex-direction: column;
+      .grid-item {
+        width: 100%;
+        max-width: none;
+        .item-title {
+          min-height: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .prices {
+    .container {
+      padding: 0 1rem;
+    }
+    h2 {
+      padding-top: 6rem;
+      font-size: 2rem;
+    }
+    .prices-container {
+      .grid-item {
+        .item-title {
+          font-size: 1rem;
+
+          span {
+            font-size: 0.8rem;
+            min-width: 50px;
+          }
         }
       }
     }
