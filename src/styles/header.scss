@@ -4,6 +4,9 @@
   background-color: $primary-color;
   height: 80px;
   color: $white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   .container {
     display: flex;
     align-items: center;
