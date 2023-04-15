@@ -83,3 +83,52 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .reviews {
+    .scroll-container {
+      .review-container {
+        .inner {
+          padding: 0 2rem;
+          .review-item {
+            padding: 2rem 3rem;
+          }
+        }
+      }
+    }
+    .scroll-btns {
+      padding-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .reviews {
+    h2 {
+      // padding-top: 6rem;
+      padding-bottom: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .scroll-container {
+      .review-container {
+        .inner {
+          padding: 0 2rem;
+          .review-item {
+            padding: 2rem 2rem;
+          }
+        }
+      }
+    }
+    .scroll-btns {
+      padding: 0;
+      bottom: 50px;
+      top: unset;
+      .btn-arrow {
+        border-radius: 5px;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
