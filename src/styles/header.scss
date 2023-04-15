@@ -67,3 +67,40 @@
     }
   }
 }
+
+@media screen and (max-width: 624px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .header {
+    .container {
+      .nav-items {
+        .item {
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 624px) {
+  .header {
+    height: 100px;
+    padding: 1rem 0;
+    .container {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 364px) {
+  .header {
+    height: 190px;
+    .container {
+      .nav-items {
+        flex-direction: column;
+      }
+    }
+  }
+}

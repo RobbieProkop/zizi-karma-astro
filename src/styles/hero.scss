@@ -27,5 +27,81 @@
       font-weight: 300;
       margin: 3rem 0;
     }
+
+    button {
+      min-width: 135px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hero {
+    .hero-text {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        margin: 1.2rem 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 824px) {
+  .hero {
+    .hero-text {
+      padding-left: 0;
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin: 1.2rem 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .hero {
+    flex-direction: column;
+    padding-top: 1rem;
+    .hero-text {
+      padding-left: 2rem;
+      padding-top: 0;
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+      a {
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    .hero-text {
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+      a {
+        button {
+          width: 100%;
+        }
+      }
+    }
   }
 }
