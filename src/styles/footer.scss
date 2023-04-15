@@ -1,7 +1,7 @@
 @import "./variables";
 
 .footer {
-  height: 120px;
+  height: 140px;
   background-color: $third-color;
   color: $black;
   width: 100%;
@@ -35,7 +35,7 @@
       }
 
       span {
-        font-style: italic;
+        // font-style: italic;
       }
     }
   }

@@ -6,9 +6,10 @@ export interface Props {
   telephone: string;
   name: string;
   button: string;
+  privacy: string;
 }
 
-const { title, telephone, name, button } = Astro.props as Props;
+const { title, telephone, name, button, privacy } = Astro.props as Props;
 
 import backgroundImg from "/form_background.jpeg";
 ---
@@ -33,6 +34,7 @@ import backgroundImg from "/form_background.jpeg";
         <input type="text" placeholder={name} />
       </div>
       <button class="btn btn-primary btn-block">{button}</button>
+      <p>{privacy}</p>
     </form>
   </div>
 </section>

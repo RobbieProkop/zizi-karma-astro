@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Russian/Header.astro";
-import Footer from "../components/English/Footer.astro";
+import Footer from "../components/Footer.astro";
 import Layout from "../layouts/RULayout.astro";
 import Hero from "../components/Russian/Hero.astro";
 import Points from "../components/Russian/Points.astro";
@@ -31,6 +31,7 @@ const reviews = await Astro.glob("../components/Russian/reviews/*.md");
     telephone="телефон"
     name="Имя"
     button="Оставить заявку"
+    privacy="Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности"
   />
   <!-- Footer -->
   <Footer />
