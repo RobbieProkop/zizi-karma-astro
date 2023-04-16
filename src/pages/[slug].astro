@@ -2,19 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const reviews = await Astro.glob("../components/Russian/reviews/*.md");
+  const posts = await Astro.glob("../components/posts/*.md");
 
-  return reviews.map((review) => ({
+  return posts.map((post) => ({
     params: {
-      slug: review.frontmatter.slug,
+      slug: post.frontmatter.slug,
     },
     props: {
-      review,
+      post,
     },
   }));
 }
 
-const { Content, frontmatter } = Astro.props.review;
+const { Content, frontmatter } = Astro.props.post;
 ---
 
 <Layout>
