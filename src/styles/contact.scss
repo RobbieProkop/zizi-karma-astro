@@ -63,3 +63,37 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .contact {
+    height: 60vh;
+
+    .contact-container {
+      height: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contact {
+    .contact-container {
+      h2 {
+        font-size: 2rem;
+      }
+      .form {
+        width: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact {
+    h2 {
+      padding-top: 6rem;
+    }
+    .contact-container {
+      padding: 1rem;
+    }
+  }
+}
