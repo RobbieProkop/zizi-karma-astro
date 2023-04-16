@@ -22,19 +22,53 @@ import backgroundImg from "/form_background.jpeg";
 
     <form class="form" name="contact" method="POST" data-netlify="true">
       <div class="form-group">
-        <label for="email"></label>
-        <input type="email" placeholder="E-mail" />
+        <input type="email" id="email" name="email" placeholder="E-mail" />
       </div>
       <div class="form-group">
-        <label for="phone"></label>
-        <input type="text" placeholder={telephone} />
+        <input type="text" id="phone" name="phone" placeholder="Telephone" />
       </div>
       <div class="form-group">
-        <label for="name"></label>
-        <input type="text" placeholder={name} />
+        <input type="text" id="name" name="name" placeholder="Name" />
       </div>
-      <button class="btn btn-primary btn-block">{button}</button>
+      <div class="form-group">
+        <textarea
+          id="message"
+          name="message"
+          rows="10"
+          placeholder="Write a message"></textarea>
+      </div>
+      <button class="btn btn-primary btn-block" id="formBtn" type="submit"
+        >{button}</button
+      >
       <p>{privacy}</p>
     </form>
   </div>
 </section>
+
+<script>
+  const form = document.querySelector(".form") as HTMLFormElement;
+  const emailInput = document.getElementById("email") as HTMLFormElement;
+  const nameInput = document.getElementById("name") as HTMLFormElement;
+  const messageInput = document.getElementById("message") as HTMLFormElement;
+  const button = document.getElementById("formBtn") as HTMLFormElement;
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("hellow??");
+
+    // Check if email, name, and message inputs have some content
+    if (
+      !emailInput.value ||
+      emailInput.value.trim() === "" ||
+      !nameInput.value ||
+      nameInput.value.trim() === "" ||
+      !messageInput.value ||
+      messageInput.value.trim() === ""
+    ) {
+      alert("Please fill out all fields");
+    } else {
+      // Submit the form
+      form.submit();
+    }
+  });
+</script>
