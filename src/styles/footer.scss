@@ -65,3 +65,21 @@
     }
   }
 }
+
+@media screen and (max-width: 580px) {
+  .footer {
+    height: 200px;
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      width: 275px;
+      padding: 0;
+      .right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+      }
+    }
+  }
+}

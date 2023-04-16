@@ -68,9 +68,9 @@
   .contact {
     height: 60vh;
 
-    .contact-container {
-      height: unset;
-    }
+    // .contact-container {
+    //   height: unset;
+    // }
   }
 }
 
@@ -87,8 +87,9 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .contact {
+    height: 80vh;
     h2 {
       padding-top: 6rem;
     }
