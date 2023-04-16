@@ -21,49 +21,49 @@ const Aspects = () => {
       id: "1",
       question: "Anxiety, distrust",
       value:
-        "Tendency to often experience intense anxiety over relatively small things.Emotional closeness in relationships with people.",
+        "This includes a tendency to experience intense anxiety over relatively small things, as well as difficulty with emotional closeness in relationships with others.",
     },
     {
       id: "2",
       question: "Panic attacks",
       value:
-        "A sudden, often unexplained attack of severe anxiety accompanied by distressing sensations (eg, palpitations, choking, chest pain, dizziness, diarrhea, nausea). Panic attacks are characterized by a rapid increase in fear and, in most cases, short duration. Usually this condition is accompanied by various fears, for example, fear of death, fear of going crazy or losing control of oneself.",
+        "Panic attacks are sudden, often unexplained episodes of severe anxiety accompanied by distressing sensations such as palpitations, choking, chest pain, dizziness, diarrhea, and nausea. Panic attacks are characterized by a rapid increase in fear and typically have a short duration. They are often accompanied by various fears such as fear of death, fear of going crazy, or fear of losing control.",
     },
     {
       id: "3",
       question: "Increased control, difficulty relaxing and resting",
       value:
-        "Psychological process related to the mechanisms of psychological defense. It consists in the unconscious conviction of a person that he is able to control everything. A natural consequence of such a conviction is a person's sense of responsibility for everything around and the feeling of guilt or anxiety that arises if something gets out of control. Inability to completely relax the body. The lack of internal permission for oneself and the body to rest, relax, let go of control of what is happening.",
+        "This psychological process is related to the mechanisms of psychological defense. It consists in the unconscious conviction that one is able to control everything. A natural consequence of such a conviction is a person's sense of responsibility for everything around and feelings of guilt or anxiety that arise if something gets out of control. Additionally, it can cause difficulty in fully relaxing the body and a lack of internal permission to rest, relax, and let go of control.",
     },
     {
       id: "4",
       question: "Psychosomatic disorders",
       value:
-        "Disorders that manifest themselves at the physiological level, as well as physiological disorders that manifest themselves at the mental level, which have arisen or aggravated against the background of stress.",
+        "These are disorders that manifest at the physiological level and are exacerbated by stress, as well as physiological disorders that manifest at the mental level.",
     },
     {
       id: "5",
       question: "Low self-esteem, self-deprecation",
       value:
-        "A subjective, negative evaluation of oneself by a person. Identification of errors and shortcomings in oneself, analysis and evaluation of the negative aspects in one's activities, one's thinking and behavior. Self-criticism.",
+        "This includes a subjective, negative evaluation of oneself, identification of errors and shortcomings, and self-criticism.",
     },
     {
       id: "6",
       question: "Rejection of the body and its personality traits",
       value:
-        "Not recognizing reality as it is, in particular, not accepting a person of his body, character traits, abilities as they are. Lack of calm and clear attention to both their capabilities and existing limitations.",
+        "This involves not recognizing reality as it is and not accepting oneself for one's body, character traits, and abilities. This can lead to a lack of calm and clear attention to one's capabilities and existing limitations.",
     },
     {
       id: "7",
       question: "Uncontrolled anger, aggression",
       value:
-        "Feelings of anger, which can occur in bursts of varying intensity and duration. The inability to control such emotions and stop, which can lead to destructive behavior that is contrary to social norms and brings physical and moral damage to people",
+        "These are feelings of anger that can occur in bursts of varying intensity and duration. The inability to control these emotions can lead to destructive behavior that is contrary to social norms and causes physical and moral harm to others.",
     },
     {
       id: "8",
       question: "Physical or sexual abuse",
       value:
-        "Moral injury due to the use of physical force, physical punishment, or acts of a sexual nature without consent, against the will.",
+        "This refers to moral injury caused by the use of physical force, physical punishment, or acts of a sexual nature without consent.",
     },
     {
       id: "9",
@@ -74,7 +74,7 @@ const Aspects = () => {
       id: "10",
       question: "Other",
       value:
-        "Difficulties not mentioned above. I use an individual approach, so there is often an opportunity to consider non-standard situations and requests.",
+        "Difficulties not mentioned above. An individual approach is used, so there is often an opportunity to consider non-standard situations and requests.",
     },
   ];
 
