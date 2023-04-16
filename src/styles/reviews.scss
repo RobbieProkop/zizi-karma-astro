@@ -2,12 +2,12 @@
 
 .reviews {
   background-color: $third-color;
-  .container {
-    position: relative;
-  }
+  position: relative;
+  display: flex;
+  justify-content: center;
+
   .scroll-container {
     display: flex;
-    // justify-content: center;
     overflow: hidden;
     margin: auto;
     align-items: center;
@@ -44,13 +44,6 @@
 
       .inner {
         transition: transform 0.3s ease-in-out;
-
-        .review-item {
-          padding: 2rem;
-          // background-color: $white;
-
-          border-radius: 5px;
-        }
         h3 {
           font-size: 1rem;
         }
@@ -60,9 +53,10 @@
 
   .scroll-btns {
     position: absolute;
+    max-width: 1200px;
+    margin: auto;
     top: 50%;
-    width: 90%;
-    // height: 15rem;
+    width: 100%;
     display: flex;
     padding: 0 2rem;
     justify-content: space-between;
@@ -90,14 +84,8 @@
       .review-container {
         .inner {
           padding: 0 2rem;
-          .review-item {
-            padding: 2rem 3rem;
-          }
         }
       }
-    }
-    .scroll-btns {
-      padding-right: 0;
     }
   }
 }
@@ -105,29 +93,77 @@
 @media screen and (max-width: 800px) {
   .reviews {
     h2 {
-      // padding-top: 6rem;
       padding-bottom: 2rem;
     }
     p {
       font-size: 1rem;
     }
     .scroll-container {
+      max-width: 600px;
       .review-container {
+        min-width: 600px;
+        max-width: 600px;
+        // margin-right: 10rem;
         .inner {
           padding: 0 2rem;
+
           .review-item {
             padding: 2rem 2rem;
           }
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .reviews {
+    .scroll-container {
+      max-width: 350px;
+      padding: 0 1rem;
+      .review-container {
+        min-width: 300px;
+        max-width: 300px;
+
+        .inner {
+          padding: 0;
+          .review-item {
+            padding: 0;
+          }
+        }
+      }
+    }
     .scroll-btns {
-      padding: 0;
-      bottom: 50px;
-      top: unset;
+      padding: 0 1rem;
       .btn-arrow {
         border-radius: 5px;
-        padding: 0.5rem 0;
+        padding: 3rem 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .reviews {
+    h2 {
+      padding-top: 6rem;
+    }
+    .scroll-container {
+      max-width: 300px;
+      padding-bottom: 5rem;
+      .review-container {
+        min-width: 300px;
+        max-width: 300px;
+        padding: 0 1rem;
+      }
+    }
+    .scroll-btns {
+      padding: 0;
+      .btn-arrow {
+        padding: 5rem 0;
+        background-color: unset;
+        backdrop-filter: blur(1px);
+        color: $secondary-color;
       }
     }
   }
