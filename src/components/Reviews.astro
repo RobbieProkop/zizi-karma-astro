@@ -5,7 +5,13 @@ import "../styles/reviews.scss";
 // console.log("review tyep", typeof reviews);
 export interface Props {
   title: string;
-  reviews: object;
+  reviews: {
+    Content: string;
+    frontmatter: {
+      name: string;
+      age:string;
+    }
+  }[];
 }
 const { reviews, title } = Astro.props as Props;
 ---
@@ -33,6 +39,7 @@ const { reviews, title } = Astro.props as Props;
         })
       }
     </div>
+    <div class="progress-bar" id="review-progress"></div>
   </div>
   <div class="scroll-btns">
     <button class="btn-arrow prev">
@@ -45,49 +52,164 @@ const { reviews, title } = Astro.props as Props;
 </section>
 
 <script>
-  const container = document.querySelector(".scroll-container");
-  const reviews = document.querySelectorAll(".review-container");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+  const container = document.querySelector(".scroll-container")as HTMLElement;
+  const reviews = document.querySelectorAll(".review-container") as NodeListOf<Element>;
+  const prevBtn = document.querySelector(".prev") as HTMLElement;
+  const nextBtn = document.querySelector(".next")as HTMLElement;
+  const progress = document.getElementById("review-progress") as HTMLElement;
 
-  function scrollToNextReview() {
-    const currentReviewIndex = Math.round(
-      (container.scrollLeft / container.scrollWidth) * reviews.length
-    );
-    if (currentReviewIndex === reviews.length - 1) {
-      container.scrollTo({
-        left: 0,
-        behavior: "smooth",
-      });
-    }
-    if (currentReviewIndex < reviews.length - 1) {
-      container.scrollTo({
-        left:
-          (container.scrollWidth / reviews.length) * (currentReviewIndex + 1),
-        behavior: "smooth",
-      });
-    }
-  }
 
-  function scrollToPrevReview() {
-    const currentReviewIndex = Math.round(
-      (container.scrollLeft / container.scrollWidth) * reviews.length
-    );
-    if (currentReviewIndex === 0) {
-      container.scrollTo({
-        left: (container.scrollWidth / reviews.length) * (reviews.length - 1),
-        behavior: "smooth",
-      });
-    }
-    if (currentReviewIndex > 0) {
-      container.scrollTo({
-        left:
-          (container.scrollWidth / reviews.length) * (currentReviewIndex - 1),
-        behavior: "smooth",
-      });
-    }
-  }
+  //touch elements
+  let isDragging = false;
+  let startX: number = 0;
+  let endX: number = 0;
+  let progressItemCount: number;
+  let currentIndex: number = parseInt(
+    getComputedStyle(container).getPropertyValue("--carousel-index")
+  );
 
-  nextBtn.addEventListener("click", scrollToNextReview);
-  prevBtn.addEventListener("click", scrollToPrevReview);
+  // Helper function to handle button clicks.
+  const handleButtonClick = (increment: number) => {
+    currentIndex =
+      (currentIndex + increment + progressItemCount) % progressItemCount;
+    container.style.setProperty("--carousel-index", currentIndex.toString());
+    calculateProgressBar();
+  };
+
+  const handleSwipeGesture = () => {
+    const swipeThreshold = 15;
+    if (Math.abs(startX - endX) < swipeThreshold) return;
+    if (startX > endX) return handleButtonClick(1);
+    return handleButtonClick(-1);
+  };
+
+  // function to record starting X point
+  const handleDragStart = (clientX: number) => {
+    isDragging = true;
+    startX = clientX;
+  };
+
+  // function to record ending X point
+  const handleDragEnd = (clientX: number) => {
+    if (!isDragging) return;
+    isDragging = false;
+    endX = clientX;
+    handleSwipeGesture();
+  };
+
+  const handleDragMove = (clientX: number) => {
+    if (!isDragging) return;
+    endX = clientX;
+  };
+
+  // Function to calculate and render progress bar.
+  const calculateProgressBar = () => {
+    progressItemCount = container.children.length;
+
+    progress.innerHTML = ""; // Clear current progress bar.
+
+    // Create new progress bar items.
+    for (let i = 0; i < progressItemCount; i++) {
+      const barItem = document.createElement("div");
+      barItem.classList.add("progress-item");
+      barItem.setAttribute("data-index", i.toString());
+      if (i === currentIndex) barItem.classList.add("active");
+      progress.append(barItem);
+    }
+  };
+
+  // function scrollToNextReview() {
+  //   const currentReviewIndex = Math.round(
+  //     (container.scrollLeft / container.scrollWidth) * reviews.length
+  //   );
+  //   if (currentReviewIndex === reviews.length - 1) {
+  //     container.scrollTo({
+  //       left: 0,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  //   if (currentReviewIndex < reviews.length - 1) {
+  //     container.scrollTo({
+  //       left:
+  //         (container.scrollWidth / reviews.length) * (currentReviewIndex + 1),
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // }
+
+  // function scrollToPrevReview() {
+  //   const currentReviewIndex = Math.round(
+  //     (container.scrollLeft / container.scrollWidth) * reviews.length
+  //   );
+  //   if (currentReviewIndex === 0) {
+  //     container.scrollTo({
+  //       left: (container.scrollWidth / reviews.length) * (reviews.length - 1),
+  //       behavior: "smooth",
+  //     });
+  //   }
+  //   if (currentReviewIndex > 0) {
+  //     container.scrollTo({
+  //       left:
+  //         (container.scrollWidth / reviews.length) * (currentReviewIndex - 1),
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // }
+
+//   function scrollToReview(direction: number) {
+//   const currentReviewIndex = Math.round(
+//     (container.scrollLeft / container.scrollWidth) * reviews.length
+//   );
+  
+//   let targetIndex: number;
+//   if (direction === 1) {
+//     targetIndex = currentReviewIndex === reviews.length - 1 ? 0 : currentReviewIndex + 1;
+//   } else if (direction === -1) {
+//     targetIndex = currentReviewIndex === 0 ? reviews.length - 1 : currentReviewIndex - 1;
+//   } else {
+//     return;
+//   }
+  
+//   container.scrollTo({
+//     left: (container.scrollWidth / reviews.length) * targetIndex,
+//     behavior: "smooth",
+//   });
+// }
+
+// Add event listener for click events on the progress bar.
+progress.addEventListener("click", (e) => {
+    const target = e.target as HTMLDivElement;
+    const index = target.getAttribute("data-index");
+    if (!index) return;
+
+    currentIndex = parseInt(index);
+    container.style.setProperty("--carousel-index", currentIndex.toString());
+    calculateProgressBar();
+  });
+
+  // Call the function to initialize the progress bar.
+  calculateProgressBar();
+
+  //Event Handlers
+  container.addEventListener("touchstart", (e: TouchEvent) =>
+    handleDragStart(e.changedTouches[0].clientX)
+  );
+  container.addEventListener("touchend", (e: TouchEvent) =>
+    handleDragEnd(e.changedTouches[0].clientX)
+  );
+  container.addEventListener("mousedown", (e: MouseEvent) =>
+    handleDragStart(e.clientX)
+  );
+  container.addEventListener("mouseup", (e: MouseEvent) =>
+    handleDragEnd(e.clientX)
+  );
+  container.addEventListener("mousemove", (e: MouseEvent) =>
+    handleDragMove(e.clientX)
+  );
+
+
+  // nextBtn.addEventListener("click", scrollToNextReview);
+  // prevBtn.addEventListener("click", scrollToPrevReview);
+  nextBtn.addEventListener("click", () =>handleButtonClick(1));
+  prevBtn.addEventListener("click", () =>handleButtonClick(-1));
 </script>

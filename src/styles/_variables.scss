@@ -5,3 +5,9 @@ $light-second: #f4a460;
 $light-second-opacity: rgba(244, 164, 96, 0.5);
 $white: #fff;
 $black: #333;
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
