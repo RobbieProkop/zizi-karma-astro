@@ -202,7 +202,7 @@
 
 .reviews {
   @include flex-center();
-  margin-bottom: 2rem;
+
   background-color: $third-color;
   position: relative;
 
@@ -210,8 +210,7 @@
     padding: 2rem;
     text-align: center;
     position: relative;
-    // overflow-x: hidden;
-    // padding: 1.5rem;
+
     h2 {
       margin-bottom: 1rem;
       color: $secondary-color;
@@ -224,12 +223,9 @@
 
     .scroll-container {
       display: flex;
-
-      // width: calc(100% - 2 * 5rem);
-
       --carousel-index: 0;
       --items-per-screen: 1;
-      transform: translateX(calc(var(--carousel-index) * (-100% - 10rem)));
+      transform: translateX(calc(var(--carousel-index) * (-100% - 100rem)));
       transition: transform 250ms ease-in-out;
       margin: auto;
 
@@ -237,12 +233,10 @@
 
       .review-container {
         @include flex-center();
-
         flex: 0 0 100%;
         width: 100%;
-        margin-right: 10rem;
+        margin-right: 100rem;
         flex-direction: column;
-        // height: 562px;
 
         .review-item {
           @include flex-center();
@@ -252,7 +246,10 @@
           border-radius: 25px;
           padding: 3rem;
           p {
-            margin-bottom: 2rem;
+            margin-bottom: 0;
+          }
+          h3 {
+            margin-top: 1rem;
           }
         }
       }
@@ -306,36 +303,38 @@
   }
 }
 
-// @media screen and (max-width: 700px) {
-//   .reviews {
-//     .container {
-//       .scroll-container {
-//         width: unset;
-//         .review-container {
-//           .review-item {
-//             width: 500px;
-//             height: 450px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// @media screen and (max-width: 520px) {
-//   .reviews {
-//     .container {
-//       .scroll-container {
-//         .review-container {
-//           .review-item {
-//             width: 100%;
-//             height: 450px;
-//             padding: 2rem;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 967px) {
+  .reviews {
+    .container {
+      .scroll-container {
+        .review-container {
+          .review-item {
+            max-width: 600px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  .reviews {
+    .container {
+      .scroll-container {
+        .review-container {
+          .review-item {
+            text-align: left;
+            max-width: 100vw;
+            // height: 450px;
+            padding: 1rem 2rem;
+          }
+        }
+      }
+    }
+    .scroll-btns {
+      display: none;
+    }
+  }
+}
 // @media screen and (max-width: 400px) {
 //   .reviews {
 //     .container {
