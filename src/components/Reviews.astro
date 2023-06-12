@@ -1,5 +1,7 @@
 ---
 import "../styles/reviews.scss";
+import prev from "../../public/prev.png";
+import next from "../../public/next.png";
 // const reviews = await Astro.glob("./reviews/*.md");
 
 // console.log("review tyep", typeof reviews);
@@ -9,8 +11,8 @@ export interface Props {
     Content: string;
     frontmatter: {
       name: string;
-      age:string;
-    }
+      age: string;
+    };
   }[];
 }
 const { reviews, title } = Astro.props as Props;
@@ -43,21 +45,22 @@ const { reviews, title } = Astro.props as Props;
   </div>
   <div class="scroll-btns">
     <button class="btn-arrow prev">
-      <span class="material-symbols-outlined"> arrow_back_ios_new</span>
+      <img src={prev} alt="prev button" loading="lazy" />
     </button>
     <button class="btn-arrow next">
-      <span class="material-symbols-outlined">arrow_forward_ios</span>
+      <img src={next} alt="next button" loading="lazy" />
     </button>
   </div>
 </section>
 
 <script>
-  const container = document.querySelector(".scroll-container")as HTMLElement;
-  const reviews = document.querySelectorAll(".review-container") as NodeListOf<Element>;
+  const container = document.querySelector(".scroll-container") as HTMLElement;
+  const reviews = document.querySelectorAll(
+    ".review-container"
+  ) as NodeListOf<Element>;
   const prevBtn = document.querySelector(".prev") as HTMLElement;
-  const nextBtn = document.querySelector(".next")as HTMLElement;
+  const nextBtn = document.querySelector(".next") as HTMLElement;
   const progress = document.getElementById("review-progress") as HTMLElement;
-
 
   //touch elements
   let isDragging = false;
@@ -156,28 +159,28 @@ const { reviews, title } = Astro.props as Props;
   //   }
   // }
 
-//   function scrollToReview(direction: number) {
-//   const currentReviewIndex = Math.round(
-//     (container.scrollLeft / container.scrollWidth) * reviews.length
-//   );
-  
-//   let targetIndex: number;
-//   if (direction === 1) {
-//     targetIndex = currentReviewIndex === reviews.length - 1 ? 0 : currentReviewIndex + 1;
-//   } else if (direction === -1) {
-//     targetIndex = currentReviewIndex === 0 ? reviews.length - 1 : currentReviewIndex - 1;
-//   } else {
-//     return;
-//   }
-  
-//   container.scrollTo({
-//     left: (container.scrollWidth / reviews.length) * targetIndex,
-//     behavior: "smooth",
-//   });
-// }
+  //   function scrollToReview(direction: number) {
+  //   const currentReviewIndex = Math.round(
+  //     (container.scrollLeft / container.scrollWidth) * reviews.length
+  //   );
 
-// Add event listener for click events on the progress bar.
-progress.addEventListener("click", (e) => {
+  //   let targetIndex: number;
+  //   if (direction === 1) {
+  //     targetIndex = currentReviewIndex === reviews.length - 1 ? 0 : currentReviewIndex + 1;
+  //   } else if (direction === -1) {
+  //     targetIndex = currentReviewIndex === 0 ? reviews.length - 1 : currentReviewIndex - 1;
+  //   } else {
+  //     return;
+  //   }
+
+  //   container.scrollTo({
+  //     left: (container.scrollWidth / reviews.length) * targetIndex,
+  //     behavior: "smooth",
+  //   });
+  // }
+
+  // Add event listener for click events on the progress bar.
+  progress.addEventListener("click", (e) => {
     const target = e.target as HTMLDivElement;
     const index = target.getAttribute("data-index");
     if (!index) return;
@@ -207,9 +210,8 @@ progress.addEventListener("click", (e) => {
     handleDragMove(e.clientX)
   );
 
-
   // nextBtn.addEventListener("click", scrollToNextReview);
   // prevBtn.addEventListener("click", scrollToPrevReview);
-  nextBtn.addEventListener("click", () =>handleButtonClick(1));
-  prevBtn.addEventListener("click", () =>handleButtonClick(-1));
+  nextBtn.addEventListener("click", () => handleButtonClick(1));
+  prevBtn.addEventListener("click", () => handleButtonClick(-1));
 </script>
