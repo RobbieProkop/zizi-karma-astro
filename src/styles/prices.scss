@@ -8,7 +8,6 @@
   .prices-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    // padding: 0 1rem;
     grid-gap: 1.6rem;
 
     .grid-item {
@@ -49,6 +48,7 @@
     .prices-container {
       display: flex;
       flex-direction: column;
+
       .grid-item {
         width: 100%;
         max-width: none;
