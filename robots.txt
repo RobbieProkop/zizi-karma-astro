@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://yuliprokop.com/sitemap-index.xml
