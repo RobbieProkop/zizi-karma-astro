@@ -5,11 +5,11 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://zizikarma.com",
+  site: "https://yuliprokop.com",
   integrations: [
     react(),
     sitemap({
-      filter: (page) => page !== "https://zizikarma.com/test-blog-post/",
+      filter: (page) => page !== "https://yuliprokop.com/test-blog-post/",
     }),
   ],
 });
