@@ -1,4 +1,4 @@
-# Zizi Karma - 2023 Website
+# Yulia Prokop - 2023 Website
 
 ## To Do
 
