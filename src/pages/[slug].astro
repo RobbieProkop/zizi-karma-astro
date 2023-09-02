@@ -1,27 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-export async function getStaticPaths() {
-  const posts = await Astro.glob("../components/posts/*.md");
+// export async function getStaticPaths() {
+//   const posts = await Astro.glob("../components/posts/*.md");
 
-  return posts.map((post) => ({
-    params: {
-      slug: post.frontmatter.slug,
-    },
-    props: {
-      post,
-    },
-  }));
-}
+//   return posts.map((post) => ({
+//     params: {
+//       slug: post.frontmatter.slug,
+//     },
+//     props: {
+//       post,
+//     },
+//   }));
+// }
 
-const { Content, frontmatter } = Astro.props.post;
+// const { Content, frontmatter } = Astro.props.post;
 ---
 
 <Layout>
   <section>
     <div class="container">
-      <h1>{frontmatter.name}</h1>
-      <Content />
+      <!-- <h1>{frontmatter.name}</h1>
+      <Content /> -->
+      <h1>this is a slug</h1>
     </div>
   </section>
 </Layout>
