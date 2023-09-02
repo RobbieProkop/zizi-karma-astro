@@ -1,6 +1,6 @@
 ---
 export async function getStaticPaths() {
-  const reviews = await Astro.glob("./reviews/*.md");
+  const reviews = await Astro.glob("../components/English/reviews/*.md");
 
   return reviews.map((review) => ({
     props: {
