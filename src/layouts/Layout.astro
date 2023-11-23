@@ -7,7 +7,7 @@ export interface Props {
 const { title = "Yulia Prokop" } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,6 +47,7 @@ const { title = "Yulia Prokop" } = Astro.props as Props;
       psychotherapy"
     />
     <meta name="author" content="Yulia Prokop" />
+
     <meta
       name="google-site-verification"
       content="m44TQxIlIL0_iFSpY5VSEHnt_pVDghSDhbYOmpYXQnU"
@@ -69,6 +70,19 @@ const { title = "Yulia Prokop" } = Astro.props as Props;
 
     <link rel="shortcut icon" href="favicon.ico" type="icons/favicon.ico" />
     <title>{title}</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-11420421186"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]): void {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-11420421186");
+    </script>
   </head>
   <body>
     <slot />
