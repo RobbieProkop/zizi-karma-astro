@@ -82,7 +82,11 @@ const { title = "Yulia Prokop" } = Astro.props as Props;
       gtag("js", new Date());
 
       gtag("config", "AW-11420421186");
+      gtag("event", "conversion", {
+        send_to: "AW-11420421186/9NBMCPPaq_kYEMKY18Uq",
+      });
     </script>
+    <!-- Event snippet for Page view conversion page -->
   </head>
   <body>
     <slot />
