@@ -9,7 +9,9 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => page !== "https://yuliprokop.com/test-blog-post/",
+      filter: (page) =>
+        page !== "https://yuliprokop.com/test-blog-post/ " ||
+        page !== "https://yuliprokop.com/ru ",
     }),
   ],
 });
