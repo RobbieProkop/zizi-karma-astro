@@ -1,18 +1,27 @@
 ---
 import "../../styles/hero.scss";
 import headshot from "/yuli-headshot.jpeg";
+
+const today = new Date();
+const years = today.getFullYear() - 2009;
 ---
 
 <section class="hero" id="about">
-  <picture>
-    <source type="image/webp" />
-    <img src={headshot} alt="Yuli Prokop Headshot" loading="lazy" />
-  </picture>
+    <picture>
+        <source type="image/webp" />
+        <img src={headshot} alt="Yuli Prokop Headshot" loading="lazy" />
+    </picture>
 
-  <div class="hero-text">
-    <h2>Здравствуйте, я Юлия Прокоп</h2>
-    <p>Психолог с опытом практической работы более 13 лет. Я работаю как с конкретными запросами, так и с состояниями на уровне первопричин трудностей. Основными методами работы являются работа с визуализацией, погружение в прошлые эмоционально значимые ситуации и активное слушание.
-    </p>
-    <a href="#contact"><button class="btn btn-primary">Записаться</button></a>
-  </div>
+    <div class="hero-text">
+        <h2>Здравствуйте, я Юлия Прокоп</h2>
+        <p>
+            Психолог с опытом практической работы более {years} лет. Я работаю как
+            с конкретными запросами, так и с состояниями на уровне первопричин трудностей.
+            Основными методами работы являются работа с визуализацией, погружение
+            в прошлые эмоционально значимые ситуации и активное слушание.
+        </p>
+        <a href="#contact"
+            ><button class="btn btn-primary">Записаться</button></a
+        >
+    </div>
 </section>

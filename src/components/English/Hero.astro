@@ -1,22 +1,26 @@
 ---
 import "../../styles/hero.scss";
 import headshot from "/yuli-headshot.jpeg";
+
+const today = new Date();
+
+const years = today.getFullYear() - 2009;
 ---
 
 <section class="hero" id="about">
-  <picture>
-    <source type="image/webp" />
-    <img src={headshot} alt="Yuli Prokop Headshot" loading="eager" />
-  </picture>
+    <picture>
+        <source type="image/webp" />
+        <img src={headshot} alt="Yuli Prokop Headshot" loading="eager" />
+    </picture>
 
-  <div class="hero-text">
-    <h2>Hi, I'm Yuli Prokop</h2>
-    <p>
-      Psychologist with over 13 years of practical experience. I work with both
-      specific requests and emotional conditions at the root level that causes
-      difficulties. The main methods I use are work with visualization,
-      immersion in past emotionally significant situations and active listening.
-    </p>
-    <a href="#contact"><button class="btn btn-primary">Sign Up</button></a>
-  </div>
+    <div class="hero-text">
+        <h2>Hi, I'm Yuli Prokop</h2>
+        <p>
+            Psychologist with over {years} years of practical experience. I work
+            with both specific requests and emotional conditions at the root level
+            that causes difficulties. The main methods I use are work with visualization,
+            immersion in past emotionally significant situations and active listening.
+        </p>
+        <a href="#contact"><button class="btn btn-primary">Sign Up</button></a>
+    </div>
 </section>
